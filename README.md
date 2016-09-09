@@ -1,4 +1,7 @@
-# weka-wrapper
-A Wrapper for the Weka Library.
+The Weka 3 Data Mining Software Wrapper
+===========================
 
-Test example: weka.example.weather.WeatherTest
+Author: Daniel Monti
+
+This Wrapper uses the [www.cs.waikato.ac.nz](http://www.cs.waikato.ac.nz/ml/weka/) - Data Mining Software in Java
+
