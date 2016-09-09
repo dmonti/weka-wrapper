@@ -25,7 +25,7 @@ public class WeatherTest {
     public void test () throws Exception {
         Weka weka = new Weka();
         weka.setClassifier( new IBk() );
-        weka.attributes( Weather.ATTRIBUTES );
+        weka.setAttributes( Weather.ATTRIBUTES );
         weka.setClassAttribute( Weather.CLASS_ATTRIBUTE );
 
         List < InstanceModel > models = loadData();

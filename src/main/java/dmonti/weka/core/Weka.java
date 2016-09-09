@@ -20,11 +20,7 @@ public class Weka {
 
     private Attribute classAttribute;
 
-    private ArrayList < Attribute > attributes;
-
-    public void attributes ( Attribute... attributes ) {
-        this.attributes = new ArrayList < Attribute >( Arrays.asList( attributes ) );
-    }
+    private List < Attribute > attributes;
 
     public void train ( Instances dataset ) throws Exception {
         setTrainingDataset( dataset );
@@ -47,6 +43,7 @@ public class Weka {
     }
 
     public Instances newDataset ( String relationName , int capacity ) {
+        ArrayList < Attribute > attributes = new ArrayList < Attribute >( getAttributes() );
         Instances dataset = new Instances( relationName , attributes , capacity );
         dataset.setClass( getClassAttribute() );
         return dataset;
@@ -114,8 +111,21 @@ public class Weka {
      *
      * @return valor do campo attributes
      */
-    public ArrayList < Attribute > getAttributes () {
+    public List < Attribute > getAttributes () {
         return attributes;
+    }
+
+    public void setAttributes ( List < Attribute > attributes ) {
+        this.attributes = attributes;
+    }
+
+    public void setAttributes ( Attribute... attributes ) {
+        setAttributes( Arrays.asList( attributes ) );
+    }
+
+    public void setAttributes ( int classIndex , Attribute... attributes ) {
+        this.classAttribute = attributes[ classIndex ];
+        setAttributes( attributes );
     }
 
     /**
