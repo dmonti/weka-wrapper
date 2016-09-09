@@ -1,5 +1,6 @@
 # Build
 build
+bin
 *.class
 .gradle
 
