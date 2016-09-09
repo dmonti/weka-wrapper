@@ -1,0 +1,17 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+version = '0.3'
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    compile 'nz.ac.waikato.cms.weka:weka-dev:3.9.0'
+    compile 'org.slf4j:slf4j-api:1.7.21'
+    testCompile 'junit:junit:4.12'
+}
