@@ -49,12 +49,7 @@ public class Weather implements InstanceModel {
     }
 
     @Override
-    public double[] getAttributeWeights () {
+    public Double getWeight () {
         return null;
-    }
-
-    @Override
-    public double getWeight () {
-        return 1;
     }
 }

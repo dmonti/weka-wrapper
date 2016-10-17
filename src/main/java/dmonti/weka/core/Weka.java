@@ -27,6 +27,12 @@ public class Weka {
         classifier.buildClassifier( dataset );
     }
 
+    public void setAttributeWeights ( double[] weights ) {
+        for ( int i = 0 ; i < weights.length ; i++ ) {
+            attributes.get( i ).setWeight( weights[ i ] );
+        }
+    }
+
     public double classify ( Instance instance ) throws Exception {
         if ( instance.dataset() == null ) {
             instance.setDataset( getTrainingDataset() );
@@ -56,7 +62,11 @@ public class Weka {
     }
 
     public Instance newDenseInstance ( Instances dataset , InstanceModel model ) {
-        return newDenseInstance( dataset , model.getAttributeValues() );
+        Instance instance = newDenseInstance( dataset , model.getAttributeValues() );
+        if ( model.getWeight() != null ) {
+            instance.setWeight( model.getWeight() );
+        }
+        return instance;
     }
 
     public Instance newDenseInstance ( Instances dataset , Object... values ) {
