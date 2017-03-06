@@ -3,6 +3,7 @@ package weka.example.weather;
 import static org.junit.Assert.assertTrue;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -11,13 +12,13 @@ import java.util.List;
 
 import org.junit.Test;
 
+import dmonti.weka.core.Weka;
+import dmonti.weka.model.InstanceModel;
 import weka.classifiers.Evaluation;
 import weka.classifiers.evaluation.NominalPrediction;
 import weka.classifiers.evaluation.Prediction;
 import weka.classifiers.lazy.IBk;
 import weka.core.Instances;
-import dmonti.weka.core.Weka;
-import dmonti.weka.model.InstanceModel;
 
 public class WeatherTest {
 
@@ -80,6 +81,8 @@ public class WeatherTest {
 
     public static BufferedReader readDataFile ( String filename ) {
         BufferedReader inputReader = null;
+        System.out.println( new File( filename ).exists() );
+        System.out.println( new File( filename ).getAbsolutePath() );
         try {
             inputReader = new BufferedReader( new FileReader( filename ) );
         } catch ( FileNotFoundException ex ) {
@@ -89,7 +92,7 @@ public class WeatherTest {
     }
 
     private List < InstanceModel > loadData () {
-        BufferedReader reader = readDataFile( "src\\test\\resources\\dataset\\weather.csv" );
+        BufferedReader reader = readDataFile( "src/test/resources/dataset/weather.csv" );
         return loadData( reader );
     }
 

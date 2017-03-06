@@ -64,7 +64,7 @@ public class Weather_ARFF_FileTest {
 
     @Test
     public void test () throws Exception {
-        BufferedReader datafile = readDataFile( "src\\test\\resources\\dataset\\weather.arff" );
+        BufferedReader datafile = readDataFile( "src/test/resources/dataset/weather.arff" );
 
         Instances data = new Instances( datafile );
         data.setClassIndex( data.numAttributes() - 1 );
