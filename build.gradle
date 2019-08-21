@@ -11,7 +11,7 @@ repositories {
 }
 
 dependencies {
-    compile 'nz.ac.waikato.cms.weka:weka-dev:3.9.1'
+    compile 'nz.ac.waikato.cms.weka:weka-dev:3.9.3'
     compile 'org.slf4j:slf4j-api:1.7.24'
     testCompile 'junit:junit:4.12'
 }
