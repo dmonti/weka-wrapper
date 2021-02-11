@@ -1,8 +1,6 @@
 The Weka 3 Data Mining Software Wrapper
 ===========================
 
-Author: Daniel Monti
-
 This library implements [www.cs.waikato.ac.nz](http://www.cs.waikato.ac.nz/ml/weka/) Data Mining Software in Java
 
 ***
